@@ -21,6 +21,9 @@ class UserRegisteration():
             logger_call("Log/UserAuth.log",self.ProcessId,"There's an error in UserRegistrationByPhone method saying --> " + str(e),"Error")
             return e
         
+   
+
+        
 
 obj = UserRegisteration(1234)
 print(obj.UserRegistrationByPhone(8853157886))
