@@ -1,0 +1,4 @@
+Date --> 2024-05-07 19:19:28 , ProcessId --> 1234 , Message --> UserRegistrationByPhone Is Invoked
+Date --> 2024-05-07 19:19:28 , ProcessId --> 1234 , Message --> Starting new HTTPS connection (1): 2factor.in:443
+Date --> 2024-05-07 19:19:28 , ProcessId --> 1234 , Message --> https://2factor.in:443 "GET /API/V1/833244f2-0bde-11ef-8cbb-0200cd936042/SMS/8853157886/1046 HTTP/1.1" 200 None
+Date --> 2024-05-07 19:19:28 , ProcessId --> 1234 , Message --> Otp is sent
