@@ -1,7 +1,7 @@
 import requests
 import random
 from Log.logger import logger_call
-from .models import UserProfile
+from .models import UserProfile , PhoneVerification ,EmailVerification
 from DemoPixelotech.settings import API_KEY , EMAIL_KEY
 import smtplib
 from DemoPixelotech.settings import EMAIL
@@ -68,10 +68,26 @@ class UserAuth():
             return str(error)
     
     def UserRegistration(self, Name, Email, PhoneNumber, Password):
+        """
+        Registers a new user with the provided details.
+
+        Args:
+            Name (str): The name of the user.
+            Email (str): The email address of the user.
+            PhoneNumber (str): The phone number of the user.
+            Password (str): The password for the user account.
+
+        Returns:
+            UserProfile or str: The UserProfile object if registration is successful, else returns an error message.
+
+        Raises:
+            Exception: If any unexpected error occurs during user registration.
+        """
         try:
-            logger_call("/Log/UserAuth.log", self.ProcessId, f"A new user is created with {Name},having email as {Email} with {PhoneNumber} phone no.", "Info")
             user = UserProfile(Name=Name, Email=Email, PhoneNumber=PhoneNumber, Password=Password)
             user.save()
+            logger_call("Log/UserAuth.log", self.ProcessId, f"A new user is created with Name: {Name}, Email: {Email}, Phone Number: {PhoneNumber}", "Info")
             return user
         except Exception as error:
-            return error
+            logger_call("/Log/UserAuth.log", self.ProcessId, f"Error occurred during user registration: {error}", "Error")
+            return str(error)
