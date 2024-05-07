@@ -6,3 +6,13 @@ Date --> 2024-05-07 19:04:14 , ProcessId --> 1234 , Message --> UserRegistration
 Date --> 2024-05-07 19:04:14 , ProcessId --> 1234 , Message --> Starting new HTTPS connection (1): 2factor.in:443
 Date --> 2024-05-07 19:04:15 , ProcessId --> 1234 , Message --> https://2factor.in:443 "GET /API/V1/833244f2-0bde-11ef-8cbb-0200cd936042/SMS/8853157886/1701 HTTP/1.1" 200 None
 Date --> 2024-05-07 19:04:15 , ProcessId --> 1234 , Message --> Otp is sent
+Date --> 2024-05-07 19:23:55 , ProcessId --> 1234 , Message --> UserRegistrationByPhone Is Invoked
+Date --> 2024-05-07 19:23:55 , ProcessId --> 1234 , Message --> Starting new HTTPS connection (1): 2factor.in:443
+Date --> 2024-05-07 19:23:56 , ProcessId --> 1234 , Message --> https://2factor.in:443 "GET /API/V1/833244f2-0bde-11ef-8cbb-0200cd936042/SMS/8853157886/1825 HTTP/1.1" 200 None
+Date --> 2024-05-07 19:23:56 , ProcessId --> 1234 , Message --> Otp is sent
+Date --> 2024-05-07 19:25:07 , ProcessId --> 1234 , Message --> D:\DemoPixelotech\DemoPixelotech\UserAuth\services.py changed, reloading.
+Date --> 2024-05-07 19:25:08 , ProcessId --> 1234 , Message --> UserRegistrationByPhone Is Invoked
+Date --> 2024-05-07 19:25:08 , ProcessId --> 1234 , Message --> Starting new HTTPS connection (1): 2factor.in:443
+Date --> 2024-05-07 19:25:09 , ProcessId --> 1234 , Message --> https://2factor.in:443 "GET /API/V1/833244f2-0bde-11ef-8cbb-0200cd936042/SMS/8853157886/1648 HTTP/1.1" 200 None
+Date --> 2024-05-07 19:25:09 , ProcessId --> 1234 , Message --> Otp is sent
+Date --> 2024-05-07 19:25:34 , ProcessId --> 1234 , Message --> D:\DemoPixelotech\DemoPixelotech\UserAuth\services.py changed, reloading.

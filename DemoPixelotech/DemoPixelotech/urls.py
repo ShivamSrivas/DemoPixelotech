@@ -20,6 +20,6 @@ from UserAuth import views
 
 urlpatterns = [
     path("admin/", admin.site.urls),
-    path('phoneNumberVerification/', views.PhoneNumberVerification, name='phone_number_verification'),
-    path('userRegistration/', views.UserRegistration, name='user_registration'),
+    path('verification', views.Verification, name='phone_number_verification'),
+    path('userRegistration', views.UserRegistration, name='user_registration'),
 ]

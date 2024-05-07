@@ -1,33 +1,41 @@
 from django.http import JsonResponse
 from django.views.decorators.csrf import csrf_exempt
 from UserAuth.models import UserProfile
+from random import randint
 from UserAuth.services import UserAuth
+import json
 
-# Instantiate UserAuth class
-user_auth = UserAuth(ProcessId="12")
+user_auth = UserAuth(ProcessId=randint(0000,1111))
 
-@csrf_exempt
-def PhoneNumberVerification(request):
+csrf_exempt
+def Verification(request):
     if request.method == 'POST':
-        phone_number = request.POST.get('phone_number')
-        if phone_number:
-            otp = user_auth.PhoneNumberVerification(phone_number)
-            if otp:
-                return JsonResponse({'otp': otp,'message':'otp sent successfully'})
+        try:
+            json_data = json.loads(request.body.decode('utf-8'))
+            phone_number = json_data.get('phone_number')
+            email_recipient = json_data.get('email_recipient')
+            if phone_number or email_recipient:
+                otp = user_auth.PhoneNumberVerification(phone_number,email_recipient)
+                if otp:
+                    return JsonResponse({'otp': otp, 'message': 'OTP sent successfully'})
+                else:
+                    return JsonResponse({'message': 'Failed to send OTP'}, status=500)
             else:
-                return JsonResponse({'message': 'Failed to send OTP'}, status=500)
-        else:
-            return JsonResponse({'message': 'Phone number is required'}, status=400)
+                return JsonResponse({'message': 'Phone or Email is required'}, status=400)
+        except json.JSONDecodeError:
+            return JsonResponse({'message': 'Invalid JSON data'}, status=400)
     else:
         return JsonResponse({'message': 'Method not allowed'}, status=405)
+    
 
 @csrf_exempt
 def UserRegistration(request):
     if request.method == 'POST':
-        name = request.POST.get('name')
-        email = request.POST.get('email')
-        phone_number = request.POST.get('phone_number')
-        password = request.POST.get('password')
+        json_data = json.loads(request.body.decode('utf-8'))
+        name = json_data.get('name')
+        email = json_data.get('email')
+        phone_number = json_data.get('phone_number')
+        password = json_data.get('password')
         
         if name and email and phone_number and password:
             user = user_auth.UserRegistration(name, email, phone_number, password)

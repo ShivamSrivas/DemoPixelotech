@@ -21,6 +21,8 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 
 # SECURITY WARNING: keep the secret key used in production secret!
 SECRET_KEY = "django-insecure-(*jdkm4ueld)n%s*27qw3b6-=^$t5%17ti&1c8zt5zv8)aq7=e"
+API_KEY="833244f2-0bde-11ef-8cbb-0200cd936042"
+EMAIL_KEY="uzqt brax gsrm kyxg"
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
@@ -44,7 +46,7 @@ MIDDLEWARE = [
     "django.middleware.security.SecurityMiddleware",
     "django.contrib.sessions.middleware.SessionMiddleware",
     "django.middleware.common.CommonMiddleware",
-    "django.middleware.csrf.CsrfViewMiddleware",
+    # "django.middleware.csrf.CsrfViewMiddleware",
     "django.contrib.auth.middleware.AuthenticationMiddleware",
     "django.contrib.messages.middleware.MessageMiddleware",
     "django.middleware.clickjacking.XFrameOptionsMiddleware",
@@ -68,7 +70,15 @@ TEMPLATES = [
     },
 ]
 
+EMAIL={
+    "subject":'Hello from Django!',
+    "message":'This is a simple email sent using Django.',
+    "sender_email":"thisemailisfordemopurposeonly@gmail.com",
+    "recipient_list": ['shivamsri896@gmail.com'],
+}
+
 WSGI_APPLICATION = "DemoPixelotech.wsgi.application"
+
 
 
 # Database
