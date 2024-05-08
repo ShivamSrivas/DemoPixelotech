@@ -1,9 +1,9 @@
 import requests
 import random
 import smtplib
-from ...Log.logger import logger_call
+from Log.logger import logger_call
 from .models import UserProfileDetail, PhoneVerification, EmailVerification, Product
-from ..DemoPixelotech.settings import API_KEY, EMAIL_KEY, EMAIL
+from DemoPixelotech.settings import API_KEY, EMAIL_KEY, EMAIL
 
 class UserAuth:
     def __init__(self, ProcessId):

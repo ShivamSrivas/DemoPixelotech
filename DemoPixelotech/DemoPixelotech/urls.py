@@ -16,8 +16,8 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path
-from ..UserAuth import views
 from django.contrib.staticfiles.urls import staticfiles_urlpatterns
+from UserAuth import views
 
 urlpatterns = [
     path("admin/", admin.site.urls),
@@ -29,4 +29,4 @@ urlpatterns = [
     path('userRegistration', views.UserRegistration, name='UserRegistration'),
     path('otpGeneration', views.OtpGeneration, name='OtpGeneration'),
 ]
-urlpatterns+=staticfiles_urlpatterns()
+urlpatterns += staticfiles_urlpatterns
