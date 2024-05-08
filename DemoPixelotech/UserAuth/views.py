@@ -1,8 +1,8 @@
 from django.http import JsonResponse
 from django.views.decorators.csrf import csrf_exempt
-from UserAuth.models import UserProfileDetail
+from ..UserAuth.models import UserProfileDetail
 from random import randint
-from UserAuth.services import UserAuth
+from ..UserAuth.services import UserAuth
 import json
 
 user_auth = UserAuth(ProcessId=randint(0000, 1111))
