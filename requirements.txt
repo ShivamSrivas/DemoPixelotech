@@ -1,9 +1,12 @@
 asgiref==3.8.1
 certifi==2024.2.2
 charset-normalizer==3.3.2
+dj-database-url==2.1.0
 Django==5.0.5
+gunicorn==22.0.0
 idna==3.7
--e git+https://github.com/ShivamSrivas/DemoPixelotech.git@86dfd0e8b43e414f2ab1cf976e636c0702ac5842#egg=Packages
+-e git+https://github.com/ShivamSrivas/DemoPixelotech.git@3562308ed30293081f5d2fc4a75455f53c3e4827#egg=Packages
+packaging==24.0
 psycopg2==2.9.9
 requests==2.31.0
 sqlparse==0.5.0
