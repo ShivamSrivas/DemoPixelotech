@@ -87,7 +87,7 @@ WSGI_APPLICATION = "DemoPixelotech.wsgi.application"
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql',
-        'NAME': 'PixelotechDemo',
+        'NAME': 'Pixelotech',
         'USER': 'postgres',
         'PASSWORD': '123456',
         'HOST': 'localhost',   

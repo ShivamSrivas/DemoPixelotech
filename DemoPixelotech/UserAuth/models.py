@@ -22,22 +22,29 @@ class EmailVerification(models.Model):
     """
     Model to store OTP for email verification.
     """
-    Email = models.EmailField(unique=True)
+    Email = models.EmailField(unique=False)
     Otp = models.CharField(max_length=6)
     Date = models.DateField(auto_now_add=True)
     Time = models.TimeField(auto_now_add=True)
 
     def __str__(self):
-        return f"OTP for {self.email}"
+        return f"OTP for {self.Email}"
+
+class Product(models.Model):
+    UniqueNumber = models.CharField(max_length=4, unique=True, verbose_name='Unique Number')
+    Url = models.URLField(verbose_name='URL')
+
+    def __str__(self):
+        return f"Product {self.UniqueNumber}"
 
 class PhoneVerification(models.Model):
     """
     Model to store OTP for phone number verification.
     """
-    PhoneNumber = models.CharField(max_length=15, unique=True)
+    PhoneNumber = models.CharField(max_length=15, unique=False)
     Otp = models.CharField(max_length=6)
     Date = models.DateField(auto_now_add=True)
     Time = models.TimeField(auto_now_add=True)
 
     def __str__(self):
-        return f"OTP for {self.phone_number}"
+        return f"OTP for {self.PhoneNumber}"
