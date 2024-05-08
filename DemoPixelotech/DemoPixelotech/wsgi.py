@@ -12,6 +12,6 @@ import os
 from django.core.wsgi import get_wsgi_application
 
 os.environ.setdefault("DJANGO_SETTINGS_MODULE", "DemoPixelotech.DemoPixelotech.settings")
-os.environ.setdefault("urls","DemoPixelotech.DemoPixelotech.urls")
+os.environ.setdefault("DJANGO_URLS_MODULE","DemoPixelotech.DemoPixelotech.urls")
 
 application = get_wsgi_application()
