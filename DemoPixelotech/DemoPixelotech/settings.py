@@ -25,9 +25,9 @@ API_KEY="833244f2-0bde-11ef-8cbb-0200cd936042"
 EMAIL_KEY="uzqt brax gsrm kyxg"
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = False
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['*']
 
 
 # Application definition
