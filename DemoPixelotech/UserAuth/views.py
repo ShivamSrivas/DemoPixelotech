@@ -1,6 +1,6 @@
 from django.http import JsonResponse
 from django.views.decorators.csrf import csrf_exempt
-from UserAuth.models import UserProfile
+from UserAuth.models import UserProfileDetail
 from random import randint
 from UserAuth.services import UserAuth
 import json
@@ -39,7 +39,7 @@ def UserRegistration(request):
         
         if name and email and phone_number and password:
             user = user_auth.UserRegistration(name, email, phone_number, password)
-            if isinstance(user, UserProfile):
+            if isinstance(user, UserProfileDetail):
                 return JsonResponse({'message': 'User registered successfully'})
             else:
                 return JsonResponse({'message': str(user)}, status=500)
